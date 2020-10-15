@@ -52,7 +52,27 @@ final List<String> quote = <String>[
   'Do you have the app artwork created yet?',
   'Do you have an RFP or sketches already created'];
 
-final List<int> colorCodes = <int>[600, 500, 100];
+
+
+
+
+final List<String> title1 = <String>[
+  'Native',
+  'Smartphones Only',
+  'Game',
+  'Yes',
+  'Social Network',
+  'Yes',
+  'Yes',
+  'Yes',
+  'Yes',
+  'Yes',
+  'Yes',
+  'Yes',
+  'In-app purchases',
+  'Yes',
+  'Yes',
+];
 
   @override
   Widget build(BuildContext context) {
@@ -65,38 +85,59 @@ final List<int> colorCodes = <int>[600, 500, 100];
           Container(
               color: Colors.green,
               
-              child: Column(
-                
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
 
-                  SizedBox(
-                    height: 30.0,
-                  ),
 
 
-               
+                //back button
+                 FlatButton(
+                  onPressed: (){
+                    setState(() {
+                    i--;
+                    });
+                   },
+                    child: Icon(
+                    Icons.arrow_back,
+                     size: 40.0,
+                   ),
+                 ),
 
-                  Text(
-                   'Estimated Cost',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 26.0,
-                      color: Colors.greenAccent,
-                    ),
+                  Column(
                     
-                  ),
-                  Text(
-                    'Php $costing',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      color: Colors.white,
-                    ),
-                  ),
+                    children: <Widget>[
+
+                      SizedBox(
+                        height: 30.0,
+                      ),
+
+
+                   
+
+                      Text(
+                       'Estimated Cost',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 26.0,
+                          color: Colors.greenAccent,
+                        ),
+                        
+                      ),
+                      Text(
+                        'Php $costing',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16.0,
+                          color: Colors.white,
+                        ),
+                      ),
 
      
-                ],
+                    ],
     ),
+                ],
+              ),
     ),
          
                 SizedBox(
@@ -106,7 +147,7 @@ final List<int> colorCodes = <int>[600, 500, 100];
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                    'Question $quesNumber of 15',
+                    'Question ${i+1} of 15',
                       style: TextStyle(
                         fontSize: 28.0,
                         color: Colors.green[200],
@@ -152,7 +193,7 @@ final List<int> colorCodes = <int>[600, 500, 100];
              
           ),
           title: Text(
-            'Native',
+            title1[i],
             style: TextStyle(
               color: Colors.black,
               fontSize: 24.0
