@@ -86,6 +86,78 @@ class _LoadingScreenState extends State<LoadingScreen> {
     'this is a test15',
   ];
 
+  final List<String> title1 = <String>[
+    'Native',
+    'Smartphones only',
+    'Game',
+    'Yes',
+    'Social Network',
+    'Yes',
+    'Yex',
+    'Yey',
+    'Yez',
+    'Yess',
+    'zxc',
+    'adawd',
+    'awdwadwa',
+    'awdwadwada',
+    'awdadwad',
+  ];
+
+  final List<String> subtitle1 = <String>[
+    'this is a test1',
+    'this is a test2',
+    'this is a test3',
+    'this is a test4',
+    'this is a test5',
+    'this is a test6',
+    'this is a test7',
+    'this is a test8',
+    'this is a test9',
+    'this is a test10',
+    'this is a test11',
+    'this is a test12',
+    'this is a test13',
+    'this is a test14',
+    'this is a test15',
+  ];
+
+  final List<String> title3 = <String>[
+    'Native',
+    'Smartphones only',
+    'Game',
+    'Yes',
+    'Social Network',
+    'Yes',
+    'Yex',
+    'Yey',
+    'Yez',
+    'Yess',
+    'zxc',
+    'adawd',
+    'awdwadwa',
+    'awdwadwada',
+    'awdadwad',
+  ];
+
+  final List<String> subtitle3 = <String>[
+    'this is a test1',
+    'this is a test2',
+    'this is a test3',
+    'this is a test4',
+    'this is a test5',
+    'this is a test6',
+    'this is a test7',
+    'this is a test8',
+    'this is a test9',
+    'this is a test10',
+    'this is a test11',
+    'this is a test12',
+    'this is a test13',
+    'this is a test14',
+    'this is a test15',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -195,14 +267,14 @@ class _LoadingScreenState extends State<LoadingScreen> {
                 image: AssetImage("images/platform.png"),
               ),
               title: Text(
-                'Cross Platform',
+                title1[i],
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 24.0,
                 ),
               ),
               subtitle: Text(
-                'One application that will run on most devices, but arecode in Javascript',
+                subtitle1[i],
                 style: TextStyle(color: Colors.grey, fontSize: 16.0),
               ),
             ),
@@ -231,14 +303,14 @@ class _LoadingScreenState extends State<LoadingScreen> {
                 image: AssetImage("images/ways.png"),
               ),
               title: Text(
-                'I Don\'t Know',
+                title3[i],
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 24.0,
                 ),
               ),
               subtitle: Text(
-                'I don\'t know which kind I nee help me choose which is best',
+                subtitle3[i],
                 style: TextStyle(color: Colors.grey, fontSize: 16.0),
               ),
             ),
