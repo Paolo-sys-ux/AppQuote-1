@@ -1,6 +1,8 @@
+import 'package:AppQuote/results_screen.dart';
 import 'package:flutter/material.dart';
 import 'loading.dart';
 import 'loading_screen.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -10,6 +12,13 @@ class MyApp extends StatelessWidget {
       title: 'App Quote',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
+
+      initialRoute: LoadingScreen.id,
+      routes: {
+        LoadingScreen.id: (context) => LoadingScreen(),
+        ResultsScreen.id: (context) => ResultsScreen(),
+      },
+
       home: LoadingScreen(),
     );
   }

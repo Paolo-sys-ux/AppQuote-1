@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 class ResultsScreen extends StatefulWidget {
-  final id = ResultsScreen();
+  static const String id = 'results_screen';
  
   @override
   _ResultsScreenState createState() => _ResultsScreenState();

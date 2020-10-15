@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'results_screen.dart';
 
 class LoadingScreen extends StatefulWidget {
-  LoadingScreen({Key key}) : super(key: key);
+  static const String id = 'loading_screen';
 
   @override
   _LoadingScreenState createState() => _LoadingScreenState();
@@ -212,8 +212,10 @@ final List<String> title1 = <String>[
 
         onPressed: (){
           if(quesNumber == 15){
-            // Navigator.pushNamed(context, ResultsScreen.id);
-          }
+         Navigator.pushNamed(context, ResultsScreen.id);
+         print(quesNumber);
+         print(i);
+                   }
           setState(() {
             i++;
             int native = 47;
