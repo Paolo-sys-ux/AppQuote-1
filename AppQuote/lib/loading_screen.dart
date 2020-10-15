@@ -13,17 +13,44 @@ class LoadingScreen extends StatefulWidget {
 class _LoadingScreenState extends State<LoadingScreen> {
 
 
-
+int i = 0;
 int costing = 0;
 int quesNumber = 1;
+
+final List<String> mainType = <String>[
+    'SUPPORTED PLATFORM',
+    'SUPPORTED DEVICES',
+    'APPLICATION TYPE',
+    'USER ACCESS',
+    'ACCESSIBILITY',
+    'USER PROFILE',
+    'NOTIFICATIONS',
+    'MESSAGING',
+    'FORM FUNCTION',
+    'GPS FUNCTION',
+    'CAMERA USAGE',
+    'E-COMMERCE FUNCTION',
+    'TYPE OF ITEMS',
+    'DESIGN ASSETS',
+    'WIREFRAMES OR DRAFTS',
+];
+
 final List<String> quote = <String>[
   'What type of mobile app suits your needs?', 
   'Which mobile screen size does your app need to support',
   'What type of app do you need?',
   'Will your users need a usernameand password?',
   'How will they login?',
-  'Will they have a user profile',
-  'Will your app use push notifications'];
+  'Will they have a user profile?',
+  'Will your app use push notifications?',
+  'Will your users share information with each other?',
+  'Will your app have forms for the user to fill out?',
+  'Does your app need to get the user\'s location?',
+  'Will your app need capture video or photos?',
+  'Will you be selling anything in you app?',
+  'What sort of items will you sell?',
+  'Do you have the app artwork created yet?',
+  'Do you have an RFP or sketches already created'];
 
 final List<int> colorCodes = <int>[600, 500, 100];
 
@@ -91,7 +118,7 @@ final List<int> colorCodes = <int>[600, 500, 100];
           Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      'SUPPORTED PLATFORM',
+                      mainType[i],
                       style: TextStyle(
                         fontSize: 16.0,
                         color: Colors.green,
@@ -103,7 +130,8 @@ final List<int> colorCodes = <int>[600, 500, 100];
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      'What type of mobile apps suits your needs?',
+                      
+                      quote[i],
                       style: TextStyle(
                         fontSize: 26.0,
                         color: Colors.black,
@@ -141,11 +169,15 @@ final List<int> colorCodes = <int>[600, 500, 100];
           ),
 
         onPressed: (){
+          if(quesNumber == 15){
+            return Scaffold();
+          }
           setState(() {
+            i++;
             int native = 47;
             costing = native+costing;
             quesNumber++;
-            
+
           });
         },
           
