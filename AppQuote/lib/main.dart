@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'loading.dart';
 import 'loading_screen.dart';
-
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
