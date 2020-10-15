@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 
 class ResultsScreen extends StatefulWidget {
+  final id = ResultsScreen();
  
   @override
   _ResultsScreenState createState() => _ResultsScreenState();
