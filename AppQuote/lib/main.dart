@@ -1,4 +1,5 @@
 import 'package:AppQuote/results_screen.dart';
+import 'package:AppQuote/send_quotation_screen.dart';
 import 'package:flutter/material.dart';
 import 'loading.dart';
 import 'loading_screen.dart';
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       routes: {
         LoadingScreen.id: (context) => LoadingScreen(),
         ResultsScreen.id: (context) => ResultsScreen(),
+        SendQuotation.id: (context) => SendQuotation(),
       },
 
       home: LoadingScreen(),
