@@ -1,5 +1,6 @@
+import 'package:AppQuote/loading_screen.dart';
 import 'package:flutter/material.dart';
-
+import 'loading.dart';
 
 class ResultsScreen extends StatefulWidget {
   static const String id = 'results_screen';
@@ -9,6 +10,10 @@ class ResultsScreen extends StatefulWidget {
 }
 
 class _ResultsScreenState extends State<ResultsScreen> {
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,33 +28,22 @@ class _ResultsScreenState extends State<ResultsScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-
-
-
-                //back button
+                 //back button
                  FlatButton(
                   onPressed: (){
                     setState(() {
+                      
                       Navigator.pop(context);
+                      
                     });
                    },
-                    child: Icon(
-                    Icons.arrow_back,
-                     size: 40.0,
-                   ),
-                 ),
+                    child: Icon(Icons.arrow_back,size: 40.0,),),
 
                   Column(
-                    
-                    children: <Widget>[
-
-                      SizedBox(
+                  children: <Widget>[
+                        SizedBox(
                         height: 30.0,
-                      ),
-
-
-                   
-
+                         ),
                       Text(
                        'Estimated Cost',
                         textAlign: TextAlign.center,
@@ -57,21 +51,19 @@ class _ResultsScreenState extends State<ResultsScreen> {
                           fontSize: 26.0,
                           color: Colors.greenAccent,
                         ),
-                        
                       ),
                       Text(
-                        'Php Something',
+                        'Php 0.00',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 16.0,
                           color: Colors.white,
                         ),
                       ),
-
-     
                     ],
-    ),
-                ],
-          ))]));
+                   ),
+                ],),
+                ),
+                ]),);
   }
 }

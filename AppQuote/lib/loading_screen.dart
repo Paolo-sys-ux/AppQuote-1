@@ -18,6 +18,8 @@ int i = 0;
 int costing = 0;
 int quesNumber = 1;
 
+
+
 final List<String> mainType = <String>[
     'SUPPORTED PLATFORM',
     'SUPPORTED DEVICES',
@@ -75,6 +77,63 @@ final List<String> title1 = <String>[
   'Yes',
 ];
 
+final List<String> subtitle1 = <String>[
+  'An application coded natively for a specific mobile device like Android or iOS',
+  'I will only support phone-size screens. Tablets sizes will simply scale up',
+  'My app is a game and with require animation and graphic elements',
+  'They will need to login and register to use the app',
+  'They will login with their social networking credentials, like Facebook.',
+  'They will have a user profile that others can view',
+  'I will send push notifications to my users',
+  'They will share information with each others(contentm chat etc.)',
+  'They will fill out forms.',
+  'My app will use GPS and location services.',
+  'The app will need to capture photos or videos.',
+  'I will be selling items in my app',
+  'I will sell items through in-app purchases.',
+  'I already have the app\'s final designs created for the app.',
+  'I already have wireframe and/or technical specification created.', 
+
+];
+
+final List<IconData> icon1 = [
+
+];
+
+final List<String> title2 = <String>[
+  'Cross Platform',
+  'Tablets Only',
+  'Business',
+  'No',
+  'No',
+  'No',
+  'No',
+  'No',
+  'No',
+  'No',
+  'No',
+  'No', 
+  
+
+];
+
+final List<String> subtitle2 = <String>[
+
+  'One application that will run on most devices, but are codes in JavaScript',
+  'I will only support tablet-size screens and devices, like iPad',
+  'My app is for business and shouldn\'t require any animations',
+  'They can use it without needing to login or register an account',
+  'I will not send push notifications to my users',
+  'My users do not interact with each other in any way',
+  'They do not fill out any forms.',
+  'My app will not use GPS or location services.',
+  'My app does not need to capture videos or photos',
+  'My app will not be selling anything',
+  'I will need the app UI/UX designs created for the app',
+];
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,14 +154,25 @@ final List<String> title1 = <String>[
                 //back button
                  FlatButton(
                   onPressed: (){
-                    setState(() {
-                    i--;
-                    });
+                  
+
+
+                  
+
+                  setState(() {
+                    if(i >= 1){
+                           i--;
+                           quesNumber--;
+                    }else{
+                     Scaffold();
+                    }
+                  });
                    },
                     child: Icon(
                     Icons.arrow_back,
-                     size: 40.0,
+                    size: 40.0,
                    ),
+                   
                  ),
 
                   Column(
@@ -181,46 +251,44 @@ final List<String> title1 = <String>[
                     ),
                   ),
 
-           SizedBox(
-             height: 20.0,
-           ),
+           SizedBox(height: 20.0,),
 
         FlatButton(
           splashColor: Colors.grey,
-            child: ListTile(
-            leading: Image(
-              image: new AssetImage("images/native.png"),
-             
-             
-          ),
-          title: Text(
-            title1[i],
+          child: ListTile(
+          leading: Image(
+          image: new AssetImage("images/native.png"),),
+          title: Text(title1[i],
             style: TextStyle(
-              color: Colors.black,
-              fontSize: 24.0
-            ),
-          ),
-          subtitle: Text(
-            'An application coded natively for a specific mobile device like Android or iOS',
+            color: Colors.black,
+            fontSize: 24.0),),
+          subtitle: Text(subtitle1[i],
             style: TextStyle(
-              color: Colors.grey,
-              fontSize: 16.0
-            ),
-          ),
-
-          ),
+            color: Colors.grey,
+            fontSize: 16.0),),),
 
         onPressed: (){
-          if(quesNumber == 15){
-         Navigator.pushNamed(context, ResultsScreen.id);
-         print(quesNumber);
-         print(i);
-                   }
-          setState(() {
+          print(quesNumber);
+         
+            setState(() {
+
+            if(quesNumber == 14){Navigator.pushNamed(context, ResultsScreen.id);}
+
+            if(quesNumber <=14){
             i++;
             int native = 47;
             costing = native+costing;
             quesNumber++;
+            }else{
+                
+               
+                quesNumber--;
+                if(quesNumber == 14){
+                  Navigator.pushNamed(context, ResultsScreen.id);
+                }
+                
+             }
+           
 
           });
         },
@@ -240,13 +308,15 @@ final List<String> title1 = <String>[
           ),
           title: Text(
             'Cross Platform',
+            // title2[i],
             style: TextStyle(
               color: Colors.black,
               fontSize: 24.0,
             ),
           ),
           subtitle: Text(
-            'One application that will run on most devices, but arecode in Javascript',
+            'One application that will run on most devices, but are code in Javascript',
+            // subtitle2[i],
             style: TextStyle(
               color: Colors.grey,
               fontSize: 16.0
