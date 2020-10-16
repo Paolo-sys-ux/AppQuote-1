@@ -18,7 +18,7 @@ int i = 0;
 int costing = 0;
 int quesNumber = 1;
 
-
+bool _isButtonDisabled = true;
 
 final List<String> mainType = <String>[
     'SUPPORTED PLATFORM',
@@ -152,14 +152,11 @@ final List<String> subtitle2 = <String>[
 
 
                 //back button
+                 quesNumber != 1 ?
                  FlatButton(
-                  onPressed: (){
                   
-
-
-                  
-
-                  setState(() {
+                  onPressed:(){
+                    setState(() {
                     if(i >= 1){
                            i--;
                            quesNumber--;
@@ -173,7 +170,7 @@ final List<String> subtitle2 = <String>[
                     size: 40.0,
                    ),
                    
-                 ),
+                 ):SizedBox(),
 
                   Column(
                     
@@ -267,14 +264,14 @@ final List<String> subtitle2 = <String>[
             color: Colors.grey,
             fontSize: 16.0),),),
 
-        onPressed: (){
+         onPressed: (){
           print(quesNumber);
          
             setState(() {
 
             if(quesNumber == 14){Navigator.pushNamed(context, ResultsScreen.id);}
 
-            if(quesNumber <=14){
+            if(quesNumber <14){
             i++;
             int native = 47;
             costing = native+costing;
@@ -282,12 +279,15 @@ final List<String> subtitle2 = <String>[
             }else{
                 
                
-                quesNumber--;
-                if(quesNumber == 14){
-                  Navigator.pushNamed(context, ResultsScreen.id);
+                // quesNumber--;
+             
+                  i = 0;
+                  quesNumber = 1;
+                  costing = 0;
+                  Scaffold();
                 }
                 
-             }
+              
            
 
           });
